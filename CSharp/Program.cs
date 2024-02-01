@@ -219,77 +219,77 @@ public class Solution
     #endregion
     public static void Main(string[] args)
     {
-        /*        #region 1
-                int n = Int32.Parse(Console.ReadLine()!);
-                int[] array = new int[n];
-                for (int i = 0; i < n; i++)
-                {
-                    array[i] = Int32.Parse(Console.ReadLine()!);
-                }
-                var arrays = ReverseArray(array);
-                Console.WriteLine(String.Join(' ', arrays));
-                #endregion
+        #region 1
+        int n = Int32.Parse(Console.ReadLine()!);
+        int[] array = new int[n];
+        for (int i = 0; i < n; i++)
+        {
+            array[i] = Int32.Parse(Console.ReadLine()!);
+        }
+        var arrays = ReverseArray(array);
+        Console.WriteLine(String.Join(' ', arrays));
+        #endregion
 
-                #region 2
-                string str = Console.ReadLine()!;
-                string rev = ReverseString(str);
-                Console.WriteLine(rev);
-                #endregion
+        #region 2
+        string str = Console.ReadLine()!;
+        string rev = ReverseString(str);
+        Console.WriteLine(rev);
+        #endregion
 
-                #region 3
-                string arr = Console.ReadLine()!;
-                string[] arr1 = new string[arr.Length];
-                string brr = Console.ReadLine()!;
-                string[] brr1 = new string[brr.Length];
-                string[] crr = CombineTwoArray(arr1!, brr1!);
-                for (int i = 0; i < crr.Length; i++)
-                {
-                    Console.WriteLine(crr[i] + " ");
-                }
-                #endregion
+        #region 3
+        string arr = Console.ReadLine()!;
+        string[] arr1 = new string[arr.Length];
+        string brr = Console.ReadLine()!;
+        string[] brr1 = new string[brr.Length];
+        string[] crr = CombineTwoArray(arr1!, brr1!);
+        for (int i = 0; i < crr.Length; i++)
+        {
+            Console.WriteLine(crr[i] + " ");
+        }
+        #endregion
 
-                #region 4
-                string srd = Console.ReadLine()!;
-                string[] strarr = ReverseStringWord(srd);
-                for (int i = 0; i <= strarr.Length - 1; i++)
-                {
-                    Console.Write(strarr[i] + " ");
-                }
-                #endregion
+        #region 4
+        string srd = Console.ReadLine()!;
+        string[] strarr = ReverseStringWord(srd);
+        for (int i = 0; i <= strarr.Length - 1; i++)
+        {
+            Console.Write(strarr[i] + " ");
+        }
+        #endregion
 
-                int num = Int32.Parse(Console.ReadLine()!);
+        int num = Int32.Parse(Console.ReadLine()!);
 
-                string res = IsEven(num);
-                Console.WriteLine(res);
+        string res = IsEven(num);
+        Console.WriteLine(res);
 
-                string response = IsPrime(num);
-                Console.WriteLine(response);*/
+        string response = IsPrime(num);
+        Console.WriteLine(response);
 
-        /*int num = Int32.Parse(Console.ReadLine()!);
-        string result = IsArmStrong(num);
+        int Inputnum = Int32.Parse(Console.ReadLine()!);
+        string result = IsArmStrong(Inputnum);
         Console.WriteLine(result);
 
-        string str = Console.ReadLine()!;
-        string rev = IsPelindrome(str);
-        Console.WriteLine(rev);
+        string Inputstr = Console.ReadLine()!;
+        string Outputrev = IsPelindrome(Inputstr);
+        Console.WriteLine(Outputrev);
 
         char ch = Char.Parse(Console.ReadLine()!);
         int index = FindIndexOfCharector(str, ch);
-        Console.WriteLine(index);*/
+        Console.WriteLine(index);
 
-        string str = Console.ReadLine()!;
+        string InputString = Console.ReadLine()!;
 
-        char[] arr = DuplicateFrequency(str);
+        char[] Outputarr = DuplicateFrequency(InputString);
 
-        for (int i = 0; i <= arr.Length - 1; i++)
+        for (int i = 0; i <= Outputarr.Length - 1; i++)
         {
-            Console.Write(arr[i] + " ");
+            Console.Write(Outputarr[i] + " ");
         }
 
-        string[] strArr = str.Split(',');
+        string[] InputStrArr = InputString.Split(',');
 
-        string result = CommonString(strArr);
-        Console.WriteLine(result);
+        string Outputresult = CommonString(InputStrArr);
+        Console.WriteLine(Outputresult);
     }
 }
 
