@@ -217,79 +217,144 @@ public class Solution
     }
 
     #endregion
+
+    #region Check Array is monotonic or not
+    static string IsMonotalic(int[] arr)
+    {
+        bool Isinc = true;
+        bool Isdec = true;
+        for (int i = 0; i < arr.Length - 1; i++)
+        {
+            if (arr[i] < arr[i+1] )
+            {
+                Isinc = false; ;
+            }
+            if (arr[i] > arr[i + 1])
+            {
+                Isdec = false; ;
+            }
+        }
+        return (Isinc | Isdec) ? "Monotonic":"Not Monotonic" ;
+    }
+
+    #endregion
     public static void Main(string[] args)
     {
-        /*        #region 1
-                int n = Int32.Parse(Console.ReadLine()!);
-                int[] array = new int[n];
-                for (int i = 0; i < n; i++)
-                {
-                    array[i] = Int32.Parse(Console.ReadLine()!);
-                }
-                var arrays = ReverseArray(array);
-                Console.WriteLine(String.Join(' ', arrays));
-                #endregion
-
-                #region 2
-                string str = Console.ReadLine()!;
-                string rev = ReverseString(str);
-                Console.WriteLine(rev);
-                #endregion
-
-                #region 3
-                string arr = Console.ReadLine()!;
-                string[] arr1 = new string[arr.Length];
-                string brr = Console.ReadLine()!;
-                string[] brr1 = new string[brr.Length];
-                string[] crr = CombineTwoArray(arr1!, brr1!);
-                for (int i = 0; i < crr.Length; i++)
-                {
-                    Console.WriteLine(crr[i] + " ");
-                }
-                #endregion
-
-                #region 4
-                string srd = Console.ReadLine()!;
-                string[] strarr = ReverseStringWord(srd);
-                for (int i = 0; i <= strarr.Length - 1; i++)
-                {
-                    Console.Write(strarr[i] + " ");
-                }
-                #endregion
-
-                int num = Int32.Parse(Console.ReadLine()!);
-
-                string res = IsEven(num);
-                Console.WriteLine(res);
-
-                string response = IsPrime(num);
-                Console.WriteLine(response);*/
-
-        /*int num = Int32.Parse(Console.ReadLine()!);
-        string result = IsArmStrong(num);
-        Console.WriteLine(result);
-
-        string str = Console.ReadLine()!;
-        string rev = IsPelindrome(str);
-        Console.WriteLine(rev);
-
-        char ch = Char.Parse(Console.ReadLine()!);
-        int index = FindIndexOfCharector(str, ch);
-        Console.WriteLine(index);*/
-
-        string str = Console.ReadLine()!;
-
-        char[] arr = DuplicateFrequency(str);
-
-        for (int i = 0; i <= arr.Length - 1; i++)
+        #region Reverse array of an string
+        int inputRevArr = Int32.Parse(Console.ReadLine()!);
+        int[] array = new int[inputRevArr];
+        for (int i = 0; i < inputRevArr; i++)
         {
-            Console.Write(arr[i] + " ");
+            array[i] = Int32.Parse(Console.ReadLine()!);
         }
+        var Revservarrays = ReverseArray(array);
+        Console.WriteLine(String.Join(' ', Revservarrays));
+        #endregion
 
-        string[] strArr = str.Split(',');
+        #region Reverse a string
+        string str = Console.ReadLine()!;
+        string revStr = ReverseString(str);
+        Console.WriteLine(revStr);
+        #endregion
 
-        string result = CommonString(strArr);
+        #region Combine two array into single array
+        string arr = Console.ReadLine()!;
+        string[] arr1 = new string[arr.Length];
+        string brr = Console.ReadLine()!;
+        string[] brr1 = new string[brr.Length];
+        string[] crr = CombineTwoArray(arr1!, brr1!);
+        for (int i = 0; i < crr.Length; i++)
+        {
+            Console.WriteLine(crr[i] + " ");
+        }
+        #endregion
+
+        #region Reverse an sentance of string.
+        string srd = Console.ReadLine()!;
+        string[] strarr = ReverseStringWord(srd);
+        for (int i = 0; i <= strarr.Length - 1; i++)
+        {
+            Console.Write(strarr[i] + " ");
+        }
+        #endregion
+
+        #region Find the fixed char from given array.
+        string strIndex = Console.ReadLine()!;
+        char ch = Char.Parse(Console.ReadLine()!);
+        int index = FindIndexOfCharector(strIndex, ch);
+        Console.WriteLine(index);
+        #endregion
+
+        #region Is Number Even
+        int IsEvennum = Int32.Parse(Console.ReadLine()!);
+
+        string res = IsEven(IsEvennum);
+        Console.WriteLine(res);
+        #endregion
+
+        #region Is Number is Prime
+        int IsPrimenum = Int32.Parse(Console.ReadLine()!);
+
+        string response = IsPrime(IsPrimenum);
+        Console.WriteLine(response);
+        #endregion
+
+        #region Is Number Armstrong
+        int IsArmStrng = Int32.Parse(Console.ReadLine()!);
+        string result = IsArmStrong(IsArmStrng);
         Console.WriteLine(result);
+        #endregion
+
+        #region Is Number is Palindrome
+        string IsPelindromeString = Console.ReadLine()!;
+
+        string Outputrev = IsPelindrome(IsPelindromeString);
+        Console.WriteLine(Outputrev);
+        #endregion
+
+        #region Find the common prefix from an array
+        string CommonPrifixString = Console.ReadLine()!;
+
+        string[] CommonPrifixStringArr = CommonPrifixString.Split(',');
+
+        string OutputresultPrifix = CommonString(CommonPrifixStringArr);
+        Console.WriteLine(OutputresultPrifix);
+        #endregion
+
+        #region Find Duplicate frequency in the given string
+        char[] DuplicateFrequencyStringArr = DuplicateFrequency(CommonPrifixString);
+
+        for (int i = 0; i <= DuplicateFrequencyStringArr.Length - 1; i++)
+        {
+            Console.Write(DuplicateFrequencyStringArr[i] + " ");
+        }
+        #endregion
+
+        #region Check Array is monotonic or not
+        // Read user input as a string
+        string userInput = Console.ReadLine()!;
+
+        // Split the input string into an array of strings
+        string[] inputArray = userInput.Split(' ');
+
+        // Convert each string to an integer and store in an array
+        int[] integerArray = new int[inputArray.Length];
+
+        for (int i = 0; i < inputArray.Length; i++)
+        {
+            if (int.TryParse(inputArray[i], out int number))
+            {
+                integerArray[i] = number;
+            }
+            else
+            {
+                Console.WriteLine($"Invalid input: '{inputArray[i]}' is not a valid integer.");
+                return;
+            }
+        }
+        string OutputString = IsMonotalic(integerArray);
+        Console.WriteLine(OutputString);
+        #endregion
     }
 }
 
