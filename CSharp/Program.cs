@@ -3,7 +3,7 @@ using System.Text;
 
 public class Solution
 {
-    #region Reverse array of an string
+    #region Reverse array of an Integer
     static int[] ReverseArray(int[] array)
     {
         int reverse = array.Length - 1;
@@ -17,7 +17,7 @@ public class Solution
 
     #endregion
 
-    #region Reverse a string
+    #region Reverse a String
     static string ReverseString(string str)
     {
         string revStr = "";
@@ -31,7 +31,7 @@ public class Solution
     }
     #endregion
 
-    #region Combine two array into single array
+    #region Combine two String Array into Single Array.
     static string[] CombineTwoArray(string[] a, string[] b)
     {
         string[] c = new string[a.Length + b.Length];
@@ -58,7 +58,7 @@ public class Solution
     }
     #endregion
 
-    #region Reverse an sentance of string.
+    #region Reverse a Sentance of Strings.
     static string[] ReverseStringWord(string word)
     {
         string[] rev = new string[word.Trim().Split().Length];
@@ -73,7 +73,7 @@ public class Solution
     }
     #endregion
 
-    #region Find the fixed char from given array.
+    #region Find the fixed Charector from given String.
     static int FindIndexOfCharector(string word, char index)
     {
         char[] arr = word.ToCharArray();
@@ -86,7 +86,7 @@ public class Solution
     }
     #endregion
 
-    #region Is number even number
+    #region Is Number is Even Number
     static string IsEven(int num)
     {
         string res = num % 2 == 0 ? "Even" : "ODD";
@@ -94,7 +94,7 @@ public class Solution
     }
     #endregion
 
-    #region Is number is prime number
+    #region Is Number is Prime Number
     static string IsPrime(int num)
     {
         string res = "";
@@ -112,7 +112,7 @@ public class Solution
     }
     #endregion
 
-    #region Is number Armstrong Number
+    #region Is Number Armstrong Number
     static bool CheckArmstrong(int num)
     {
         int result = 0;
@@ -165,7 +165,7 @@ public class Solution
     }
     #endregion
 
-    #region Find the common prefix from an array
+    #region Find the Common Prefix from an String Array
     static string CommonString(string[] str)
     {
         Array.Sort(str);
@@ -184,7 +184,7 @@ public class Solution
     }
     #endregion
 
-    #region Find duplicate frequency in the given string
+    #region Find Duplicate Frequency in the given String
     static char[] DuplicateFrequency(string str)
     {
         char[] arr = str.ToLower().ToArray();
@@ -219,10 +219,10 @@ public class Solution
     #endregion
     public static void Main(string[] args)
     {
-        #region 1
-        int n = Int32.Parse(Console.ReadLine()!);
-        int[] array = new int[n];
-        for (int i = 0; i < n; i++)
+        #region Reverse array of an Integer
+        int parseIntegerInput = Int32.Parse(Console.ReadLine()!);
+        int[] array = new int[parseIntegerInput];
+        for (int i = 0; i < parseIntegerInput; i++)
         {
             array[i] = Int32.Parse(Console.ReadLine()!);
         }
@@ -230,66 +230,106 @@ public class Solution
         Console.WriteLine(String.Join(' ', arrays));
         #endregion
 
-        #region 2
-        string str = Console.ReadLine()!;
-        string rev = ReverseString(str);
+        #region Reverse a String
+
+        string stringReverseInput = Console.ReadLine()!;
+        string rev = ReverseString(stringReverseInput);
+
         Console.WriteLine(rev);
+
         #endregion
 
-        #region 3
-        string arr = Console.ReadLine()!;
-        string[] arr1 = new string[arr.Length];
-        string brr = Console.ReadLine()!;
-        string[] brr1 = new string[brr.Length];
-        string[] crr = CombineTwoArray(arr1!, brr1!);
-        for (int i = 0; i < crr.Length; i++)
+        #region Combine two String Array into Single Array.
+
+        string firstStringArrayInput = Console.ReadLine()!;
+        string[] firstArray = new string[firstStringArrayInput.Length];
+        string secondStringArrayInput = Console.ReadLine()!;
+        string[] secondArray = new string[secondStringArrayInput.Length];
+        string[] finalArray = CombineTwoArray(firstArray!, secondArray!);
+
+        for (int i = 0; i < finalArray.Length; i++)
         {
-            Console.WriteLine(crr[i] + " ");
+            Console.WriteLine(finalArray[i] + " ");
         }
+
         #endregion
 
-        #region 4
-        string srd = Console.ReadLine()!;
-        string[] strarr = ReverseStringWord(srd);
-        for (int i = 0; i <= strarr.Length - 1; i++)
+        #region Reverse a Sentance of Strings.
+
+        string stringWordInput = Console.ReadLine()!;
+        string[] reverseStringWordArray = ReverseStringWord(stringWordInput);
+
+        for (int i = 0; i <= reverseStringWordArray.Length - 1; i++)
         {
-            Console.Write(strarr[i] + " ");
+            Console.Write(reverseStringWordArray[i] + " ");
         }
+
         #endregion
 
-        int num = Int32.Parse(Console.ReadLine()!);
+        #region Find the fixed Charector from given String.
 
-        string res = IsEven(num);
-        Console.WriteLine(res);
+        string stringWord = Console.ReadLine()!;
+        char fixedcharector = Char.Parse(Console.ReadLine()!);
+        int index = FindIndexOfCharector(stringWord, fixedcharector);
 
-        string response = IsPrime(num);
-        Console.WriteLine(response);
-
-        int Inputnum = Int32.Parse(Console.ReadLine()!);
-        string result = IsArmStrong(Inputnum);
-        Console.WriteLine(result);
-
-        string Inputstr = Console.ReadLine()!;
-        string Outputrev = IsPelindrome(Inputstr);
-        Console.WriteLine(Outputrev);
-
-        char ch = Char.Parse(Console.ReadLine()!);
-        int index = FindIndexOfCharector(str, ch);
         Console.WriteLine(index);
 
-        string InputString = Console.ReadLine()!;
+        #endregion
 
-        char[] Outputarr = DuplicateFrequency(InputString);
+        #region Is Number is Even Number
 
-        for (int i = 0; i <= Outputarr.Length - 1; i++)
+        int findEvenNumber = Int32.Parse(Console.ReadLine()!);
+        string result = IsEven(findEvenNumber);
+
+        Console.WriteLine(result);
+
+        #endregion
+
+        #region Is Number is Prime Number
+
+        int findPrimeNumber = Int32.Parse(Console.ReadLine()!);
+        string response = IsPrime(findPrimeNumber);
+        Console.WriteLine(response);
+
+        #endregion
+
+        #region Is Number Armstrong Number
+
+        int findArmstrongNumber = Int32.Parse(Console.ReadLine()!);
+        string ArmstrongNumber = IsArmStrong(findArmstrongNumber);
+        Console.WriteLine(ArmstrongNumber);
+
+        #endregion
+
+        #region Is String is Pelindrom or Not
+
+        string pelindromeInputstring = Console.ReadLine()!;
+        string OutputPelindrome = IsPelindrome(pelindromeInputstring);
+        Console.WriteLine(OutputPelindrome);
+
+        #endregion
+
+        #region Find the Common Prefix from an String Array
+
+        string commonInputString = Console.ReadLine()!;
+        string[] commonInputStringArray = commonInputString.Split(',');
+
+        string commonOutputResult = CommonString(commonInputStringArray);
+        Console.WriteLine(commonOutputResult);
+
+        #endregion
+
+        #region Find Duplicate Frequency in the given String
+
+        string duplicateInputString = Console.ReadLine()!;
+        char[] duplicateOutputArray = DuplicateFrequency(duplicateInputString);
+
+        for (int i = 0; i <= duplicateOutputArray.Length - 1; i++)
         {
-            Console.Write(Outputarr[i] + " ");
+            Console.Write(duplicateOutputArray[i] + " ");
         }
 
-        string[] InputStrArr = InputString.Split(',');
-
-        string Outputresult = CommonString(InputStrArr);
-        Console.WriteLine(Outputresult);
+        #endregion
     }
 }
 
