@@ -24,8 +24,7 @@ public class Solution
         char[] chars = str.ToCharArray();
         for (int i = chars.Length - 1; i >= 0; i--)
         {
-            var c = chars[i];
-            revStr += c;
+            revStr += chars[i];
         }
         return revStr;
     }
@@ -217,6 +216,42 @@ public class Solution
     }
 
     #endregion
+
+    #region Find the Common item from the given two Integer Array
+
+    public static int[] SecondMaxElement()
+    {
+        int[] l1 = { 1, 7, 50, 100 };
+        Array.Sort(l1);
+        int[] l2 = { 200, 250, 50, 7, 90 };
+        Array.Sort(l2);
+
+        int[] lst = new int[Math.Min(l1.Length, l2.Length)];
+        int temp = 0, i = 0, j = 0;
+
+        while (i < l1.Length && j < l2.Length) 
+        {
+            if (l1[i] == l2[j])
+            {
+                lst[temp] = l1[i];
+                temp++;
+                i++;
+                j++;
+            }
+            else if (l1[i] < l2[j])
+            {
+                i++;
+            }
+            else
+            {
+                j++;
+            }
+        }
+        Array.Resize(ref lst, temp);
+        return lst;
+    }
+
+    #endregion
     public static void Main(string[] args)
     {
         #region Reverse array of an Integer
@@ -327,6 +362,16 @@ public class Solution
         for (int i = 0; i <= duplicateOutputArray.Length - 1; i++)
         {
             Console.Write(duplicateOutputArray[i] + " ");
+        }
+
+        #endregion
+
+        #region Find the Common item from the given two Integer Array
+
+        int[] lstUser = SecondMaxElement();
+        for (int i = 0; i < lstUser.Length; i++)
+        {
+            Console.WriteLine(lstUser[i]);
         }
 
         #endregion
