@@ -387,6 +387,28 @@ public class Solution
         y = temp;
     }
 
+    #region Check Array is Monotonic or Not Monotonic
+    
+    static string IsMonotalic(int[] arr)
+    {
+        bool Isinc = true;
+        bool Isdec = true;
+        for (int i = 0; i < arr.Length - 1; i++)
+        {
+            if (arr[i] < arr[i + 1])
+            {
+                Isinc = false; ;
+            }
+            if (arr[i] > arr[i + 1])
+            {
+                Isdec = false; ;
+            }
+        }
+        return (Isinc | Isdec) ? "Monotonic" : "Not Monotonic";
+    }
+
+    #endregion
+
 
 
     public static void Main(string[] args)
@@ -556,6 +578,26 @@ public class Solution
         Console.WriteLine(X + " " + Y);
         SwapNumberUsingThirdVariableInGenric(ref X, ref Y);
         Console.WriteLine(X + " " + Y);
+
+        string userInput = Console.ReadLine()!;
+        string[] inputArray = userInput.Split(' ');
+        int[] integerArray = new int[inputArray.Length];
+
+        for (int i = 0; i < inputArray.Length; i++)
+        {
+            if (int.TryParse(inputArray[i], out int number))
+            {
+                integerArray[i] = number;
+            }
+            else
+            {
+                Console.WriteLine($"Invalid input: '{inputArray[i]}' is not a valid integer.");
+                return;
+            }
+        }
+
+        string OutputString = IsMonotalic(integerArray);
+        Console.WriteLine(OutputString);
     }
 }
 
