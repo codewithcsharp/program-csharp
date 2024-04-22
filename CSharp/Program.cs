@@ -1,6 +1,4 @@
-﻿using System;
-using System.Text;
-
+﻿
 public class Solution
 {
     #region Reverse array of an Integer
@@ -63,7 +61,7 @@ public class Solution
         string[] rev = new string[word.Trim().Split().Length];
         int temp = 0;
         string[] arr = word.Trim().Split();
-        for (int i = arr.Length-1; i >= 0; i--)
+        for (int i = arr.Length - 1; i >= 0; i--)
         {
             rev[temp] = arr[i];
             temp++;
@@ -77,7 +75,7 @@ public class Solution
     {
         char[] arr = word.ToCharArray();
         int temp = 0;
-        for(int i = 0; i <= arr.Length-1; i++)
+        for (int i = 0; i <= arr.Length - 1; i++)
         {
             temp = arr[i] == index ? i : 0;
         }
@@ -101,7 +99,7 @@ public class Solution
         {
             res = "PRIME";
         }
-        int n = num%2==0 ? num/2 : num/2+1;
+        int n = num % 2 == 0 ? num / 2 : num / 2 + 1;
         for (int i = 2; i <= n; i++)
         {
             int rem = num % i;
@@ -149,7 +147,7 @@ public class Solution
     {
         string revStr = "";
         char[] arr = str.ToCharArray();
-        for (int i = arr.Length-1; i>=0; i--)
+        for (int i = arr.Length - 1; i >= 0; i--)
         {
             revStr += arr[i];
         }
@@ -159,7 +157,7 @@ public class Solution
     static string IsPelindrome(string str)
     {
         string temp = str;
-        string rev = CheckPelindrome (str);
+        string rev = CheckPelindrome(str);
         return temp == rev ? "Pelindrome" : "Not-Pelindrome";
     }
     #endregion
@@ -170,8 +168,8 @@ public class Solution
         Array.Sort(str);
         char[] start = str[0].ToArray();
         char[] end = str[^1].ToArray();
-        StringBuilder prefix = new StringBuilder();
-        for (int i = 0; i <= start.Length-1; i++)
+        System.Text.StringBuilder prefix = new();
+        for (int i = 0; i <= start.Length - 1; i++)
         {
             if (start[i] != end[i])
             {
@@ -198,7 +196,7 @@ public class Solution
                 continue;
             }
 
-            for (int j = i + 1; j <= arr.Length-1; j++)
+            for (int j = i + 1; j <= arr.Length - 1; j++)
             {
                 if (currentChar == arr[j])
                 {
@@ -229,7 +227,7 @@ public class Solution
         int[] lst = new int[Math.Min(l1.Length, l2.Length)];
         int temp = 0, i = 0, j = 0;
 
-        while (i < l1.Length && j < l2.Length) 
+        while (i < l1.Length && j < l2.Length)
         {
             if (l1[i] == l2[j])
             {
@@ -252,6 +250,264 @@ public class Solution
     }
 
     #endregion
+
+    #region Reverse a string without using inbuilt method
+
+    public static string ReverseWithoutInbuiltString(string str)
+    {
+        // Output : KPMG TO WELCOME
+        int count = 0;
+        int wordstart = 0;
+        string[] words = new string[str.Length];
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (str[i] == ' ')
+            {
+                words[count++] = str.Substring(wordstart, i - wordstart);
+                wordstart = i + 1;
+            }
+        }
+        words[count++] = str.Substring(wordstart);
+
+        string reverse = "";
+
+        for (int i = count - 1; i >= 0; i--)
+        {
+            reverse += words[i] + ' ';
+        }
+
+
+        return reverse;
+    }
+
+    #endregion
+
+    #region Print Odd Number Peramid
+    public static void PrintOddPeramid(int n)
+    {
+        for (int i = 1; i <= n; i++)
+        {
+            for (int j = 1; j <= i * 2; j += 2)
+            {
+                Console.Write(j + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    #endregion
+
+    #region Print Even Number Peramid
+    public static void PrintEvenPeramid(int n)
+    {
+        for (int i = 1; i <= n; i++)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write(2 * j + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    #endregion
+
+    #region Print Left Star Peramid
+    public static void PrintLeftStarPeramid(int n)
+    {
+        for (int i = 1; i <= n; i++)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write("*" + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    #endregion
+
+    #region Print Right Star Peramid
+    public static void PrintRightStarPeramid(int n)
+    {
+        for (int i = 0; i <= n; i++)
+        {
+            for (int j = 0; j <= n - i - 1; j++)
+            {
+                Console.Write("  ");
+            }
+
+            for (int k = 0; k <= i; k++)
+            {
+                Console.Write("* ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    #endregion
+
+    #region Print Star Parllel
+    public static void PrintStarParllel(int n)
+    {
+        for (int i = 1; i <= n; i++)
+        {
+            for (int j = 1; j <= n; j++)
+            {
+                Console.Write("*" + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    #endregion
+
+    #region Print Down Star
+    public static void PrintDownStar(int n)
+    {
+        for (int i = 1; i <= n; ++i)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write("  ");
+            }
+
+            for (int k = i; k <= n; k++)
+            {
+                Console.Write("* ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    #endregion
+
+    #region Swap Number Using Third Variable
+    public static void SwapNumberUsingThirdVariable(int a, int b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+
+    #endregion
+
+    #region Swap Number Without Using Third Variable
+    public static void SwapNumberWithoutUsingThirdVariable(int x, int y)
+    {
+        x = x + y - x;
+        y = y + x - y;
+    }
+
+    #endregion
+
+    #region Swap Number Using Third Variable In Genric <T>
+    public static void SwapNumberUsingThirdVariableInGenric<T>(ref T x, ref T y)
+    {
+        T temp = x;
+        x = y;
+        y = temp;
+    }
+
+    #endregion
+
+    #region Check Array is Monotonic or Not Monotonic
+
+    static string IsMonotalic(int[] arr)
+    {
+        bool Isinc = true;
+        bool Isdec = true;
+        for (int i = 0; i < arr.Length - 1; i++)
+        {
+            if (arr[i] < arr[i + 1])
+            {
+                Isinc = false; ;
+            }
+            if (arr[i] > arr[i + 1])
+            {
+                Isdec = false; ;
+            }
+        }
+        return (Isinc | Isdec) ? "Monotonic" : "Not Monotonic";
+    }
+
+    #endregion
+
+    #region Find Occurence Char in String
+    public static void OccrenceChar(string str)
+    {
+        Dictionary<char, int> CharCounts = new Dictionary<char, int>();
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (CharCounts.ContainsKey(str[i]))
+            {
+                CharCounts[str[i]]++;
+            }
+            else
+            {
+                CharCounts.Add(str[i], 1);
+            }
+        }
+
+        foreach (var c in CharCounts)
+        {
+            Console.WriteLine($"'{c.Key}' : {c.Value}");
+        }
+    }
+
+    #endregion 
+
+    #region Find the Number Occurring Odd Number of Times in C#
+
+    public static void FindOddOccurrence(int[] arr)
+    {
+        // int[] arr = { 2, 3, 5, 4, 5, 2, 4, 3, 5, 2, 4, 4, 2 };
+        // Output : 5
+        Dictionary<int, int> pairs = new Dictionary<int, int>();
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (pairs.ContainsKey(arr[i]))
+            {
+                pairs[arr[i]]++;
+            }
+            else
+            {
+                pairs[arr[i]] = 1;
+            }
+        }
+        foreach (var item in pairs)
+        {
+            if (item.Value % 2 != 0)
+            {
+                Console.WriteLine($"'{item.Key}' : {item.Value}");
+            }
+        }
+    }
+
+    #endregion
+
+    #region Two Sum - Indices of the two numbers such that they add up to target
+    public static int[] TwoSums(int[] nums, int target)
+    {
+        Dictionary<int, int> result = new();
+        for (int i = 0; i < nums.Length; i++)
+        {
+            int targetValue = target - nums[i];
+            if (result.ContainsKey(targetValue))
+            {
+                return new int[] { result[targetValue], i };
+            }
+            if (!result.ContainsKey(nums[i]))
+            {
+                result.Add(nums[i], i);
+            }
+        }
+        throw new ArgumentException("No two sum");
+    }
+
+    #endregion
+
     public static void Main(string[] args)
     {
         #region Reverse array of an Integer
@@ -375,6 +631,77 @@ public class Solution
         }
 
         #endregion
+
+        #region Reverse a string without using inbuilt method
+
+        string StringInput = Console.ReadLine()!;
+        string ReverseStringOutput = ReverseWithoutInbuiltString(StringInput);
+        Console.WriteLine(ReverseStringOutput);
+
+        #endregion
+
+        int Even = int.Parse(Console.ReadLine()!);
+        PrintEvenPeramid(Even);
+
+        int Odd = int.Parse(Console.ReadLine()!);
+        PrintOddPeramid(Odd);
+
+        int Left = int.Parse(Console.ReadLine()!);
+        PrintLeftStarPeramid(Left);
+
+        int Right = int.Parse(Console.ReadLine()!);
+        PrintRightStarPeramid(Right);
+
+        int Parllel = int.Parse(Console.ReadLine()!);
+        PrintStarParllel(Parllel);
+
+        int Down = int.Parse(Console.ReadLine()!);
+        PrintDownStar(Down);
+
+        int a = int.Parse(Console.ReadLine()!);
+        int b = int.Parse(Console.ReadLine()!);
+        Console.WriteLine(a + " " + b);
+        SwapNumberUsingThirdVariable(a, b);
+        Console.WriteLine(a + " " + b);
+
+        int x = int.Parse(Console.ReadLine()!);
+        int y = int.Parse(Console.ReadLine()!);
+        Console.WriteLine(x + " " + y);
+        SwapNumberWithoutUsingThirdVariable(x, y);
+        Console.WriteLine(x + " " + y);
+
+        int X = int.Parse(Console.ReadLine()!);
+        int Y = int.Parse(Console.ReadLine()!);
+        Console.WriteLine(X + " " + Y);
+        SwapNumberUsingThirdVariableInGenric(ref X, ref Y);
+        Console.WriteLine(X + " " + Y);
+
+        string userInput = Console.ReadLine()!;
+        string[] inputArray = userInput.Split(' ');
+        int[] integerArray = new int[inputArray.Length];
+
+        for (int i = 0; i < inputArray.Length; i++)
+        {
+            if (int.TryParse(inputArray[i], out int number))
+            {
+                integerArray[i] = number;
+            }
+            else
+            {
+                Console.WriteLine($"Invalid input: '{inputArray[i]}' is not a valid integer.");
+                return;
+            }
+        }
+
+        string OutputString = IsMonotalic(integerArray);
+        Console.WriteLine(OutputString);
+
+        string str = Console.ReadLine()!;
+        OccrenceChar(str);
+
+        int target = 6;
+        int[] numbers = { 3, 2, 4 };
+        TwoSums(numbers, target);
     }
 }
 
