@@ -242,6 +242,29 @@ public class Solution
         int outputSecondLargest = StringProgram.FindSecondLargest(arrOut);
         Console.WriteLine("Second largest number is: " + outputSecondLargest);  // Output: 9
         #endregion
+
+        #region Shift pair numbers in last - Array
+        int[] pair = { 2, 2, 2, 4, 5, 6, 7, 1, 1, 1, 8, 9, 10, 1 };
+        Console.WriteLine("Original Array:");
+        StringProgram.PrintShiftPairNumbersInLast(pair);
+
+        int[] shiftedArray = StringProgram.ShiftPairNumbersInLast(pair);
+        Console.WriteLine("\nArray after shifting elements with multiple occurrences to end:");
+        StringProgram.PrintShiftPairNumbersInLast(shiftedArray);
+        #endregion
+
+        #region Find the longest subarrays in the Array
+
+        int[] longArrayInput = { 5, 3, 10, 2, 1, 20 };
+        List<int[]> Output = StringProgram.LongestSubArray(longArrayInput);
+        Console.WriteLine(Output);
+        Console.WriteLine("Maximum Subarrays where the first element is greater than the second:");
+        foreach (var subarray in Output)
+        {
+            Console.Write("{ "+ string.Join(", ", subarray) + " }");
+        }
+
+        #endregion
     }
 }
 

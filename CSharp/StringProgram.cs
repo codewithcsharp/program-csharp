@@ -592,5 +592,118 @@
 
 
         #endregion
+
+        #region Shift pair numbers in last - Array
+        public static int[] ShiftPairNumbersInLast(int[] arr)
+        {
+            // Occurence
+            Dictionary<int, int> occurence = new();
+            foreach (int currentItem in arr)
+            {
+                if (occurence.ContainsKey(currentItem))
+                    occurence[currentItem]++;
+                else
+                    occurence[currentItem] = 1;
+            }
+
+
+            // Multiple occurence
+            List<int> multipleOccurence = new();
+            foreach (var currentItem in occurence)
+            {
+                if (currentItem.Value > 1)
+                {
+                    multipleOccurence.Add(currentItem.Key);
+                }
+            }
+
+            int[] newShiftedArray = new int[arr.Length];
+            int startIndex = 0;
+            int endIndex = arr.Length - 1;
+
+            foreach (int num in arr)
+            {
+                if (multipleOccurence.Contains(num))
+                {
+                    newShiftedArray[endIndex] = num;
+                    endIndex--;
+                }
+                else
+                {
+                    newShiftedArray[startIndex] = num;
+                    startIndex++;
+                }
+            }
+            return newShiftedArray;
+        }
+
+        public static void PrintShiftPairNumbersInLast(int[] array)
+        {
+            foreach (var num in array)
+            {
+                Console.Write(num + " ");
+            }
+            Console.WriteLine();
+        }
+        #endregion
+
+        #region Determine if any two integers in array sum to given integer
+
+        public static bool SumOfTwoGivenIntegerToTarget(int[] arr, int target)
+        {
+            bool result = false;
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                int num = arr[i] + arr[i + 1];
+                if (num == target)
+                    result = true;
+                else
+                    result = false;
+            }
+            return result;
+        }
+        #endregion
+
+        #region Find the longest subarrays in the Array
+        public static List<int[]> LongestSubArray(int[] arr)
+        {
+            List<int[]> longestSubArrays = new();
+            List<int[]> finalArrayCollection = new();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                List<int> currentArrayItem = new(){ arr[i] };
+                int k = currentArrayItem.Count;
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[j] > currentArrayItem[k - 1])
+                    {
+                        currentArrayItem.Add(arr[j]);
+                    }
+                }
+                if (currentArrayItem.Count > 1)
+                {
+                    finalArrayCollection.Add(currentArrayItem.ToArray());
+                }
+
+                int maxLength = 0;
+
+                foreach (int[] currentArray in finalArrayCollection)
+                {
+                    if (currentArray.Length > maxLength)
+                    {
+                        maxLength = currentArray.Length;
+                        longestSubArrays.Clear();
+                        longestSubArrays.Add(currentArray);
+                    }
+                    else if (currentArray.Length == maxLength)
+                    {
+                        longestSubArrays.Add(currentArray);
+                    }
+                }
+            }
+            return longestSubArrays;
+        }
+
+        #endregion
     }
 }
