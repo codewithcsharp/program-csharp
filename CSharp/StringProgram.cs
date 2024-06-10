@@ -1,4 +1,6 @@
-﻿namespace CSharp
+﻿using System.Text.RegularExpressions;
+
+namespace CSharp
 {
     public class StringProgram
     {
@@ -557,7 +559,7 @@
         {
             int first = int.MinValue;
             int second = int.MinValue;
-            foreach(int currentItem in arr)
+            foreach (int currentItem in arr)
             {
                 if (currentItem > first)
                 {
@@ -579,7 +581,7 @@
             int actualArrayLength = arr.Length + 1;
             int actualTotal = actualArrayLength * (actualArrayLength + 1) / 2;
             int currentTotal = 0;
-            foreach(int currentItem in arr)
+            foreach (int currentItem in arr)
             {
                 currentTotal = currentTotal + currentItem;
             }
@@ -671,7 +673,7 @@
             List<int[]> finalArrayCollection = new();
             for (int i = 0; i < arr.Length; i++)
             {
-                List<int> currentArrayItem = new(){ arr[i] };
+                List<int> currentArrayItem = new() { arr[i] };
                 int k = currentArrayItem.Count;
                 for (int j = i + 1; j < arr.Length; j++)
                 {
@@ -704,6 +706,143 @@
             return longestSubArrays;
         }
 
+        #endregion
+
+        #region Print Traget Combination - Arrays
+
+        public static List<int[]> PrintCombination(int[] arr, int target)
+        {
+            // {1,2,3,4,5,6,8,11,10,9,7}
+            // target Output : 12 --> combination of two numbers
+            List<int[]> finalResult = new();
+            //int[] result = new int[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] + arr[j] == target)
+                    {
+                        finalResult.Add(new int[] { arr[i], arr[j] });
+                    }
+                }
+            }
+
+            return finalResult;
+        }
+
+        #endregion
+
+        #region Print Traget Combination Number - Array
+
+
+        public static List<int[]> PrintTragetCombination(int[] arr, int target)
+        {
+            // {1,2,3,4,5,6,8,11,10,9,7}
+            // target Output : 12 --> combination of n numbers
+            List<int[]> finalCombinations = new();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == target)
+                {
+
+                }
+            }
+            return finalCombinations;
+        }
+
+
+        #endregion
+
+        #region Print Sum of string Itrate Integers - Total
+
+        public static int SumStringItrateInteger(string str)
+        {
+            int sum = 0;
+            MatchCollection match = Regex.Matches(str, @"\d+");
+            foreach (int i in match.Select(v => int.Parse(v.Value)))
+            {
+                sum = sum + i;
+            }
+
+            return sum;
+        }
+
+        #endregion
+
+        #region Merge Two Shorted Array - Array
+
+        // int[] a = { 1, 2, 3, 4, 5, 6, 7 };
+        // int[] b = { 8, 9, 10, 11, 12, 13, 14, 15 };
+        public static int[] MergeTwoShortedArray(int[] arr, int[] brr)
+        {
+            int[] finalArray = new int[arr.Length + brr.Length];
+
+            int arrLength = arr.Length;
+            int brrLength = brr.Length;
+
+            int i = 0; int j = 0; int k = 0;
+
+            while (i < arrLength && j < brrLength)
+            {
+                if (arr[i] < brr[j])
+                {
+                    finalArray[k] = arr[i];
+                    k++;
+                    i++;
+                }
+                else
+                {
+                    finalArray[k] = brr[j];
+                    k++;
+                    j++;
+                }
+            }
+
+            while (i < arrLength)
+            {
+                finalArray[k] = arr[i];
+                k++;
+                i++;
+            }
+
+            while (j < brrLength)
+            {
+                finalArray[k] = brr[j];
+                k++;
+                j++;
+            }
+
+            return finalArray;
+        }
+
+        #endregion
+
+        #region Find second highest iteger from an Array - Array
+        public static int FindSecondHeighestInteger(int[] arr)
+        {
+            int highest = int.MinValue;
+            int secondHighest = int.MinValue;
+            foreach (int i in arr)
+            {
+                if(i > highest)
+                {
+                    secondHighest = highest;
+                    highest = i;
+                }
+                else if (i > secondHighest && i < highest)
+                {
+                    secondHighest = i;
+                }
+            }
+            return secondHighest;
+        }
+        #endregion
+
+        #region Short an Array : Shorting Technique - Bubble Short
+        public static int[] BubbleShort(int[] arr)
+        {
+            return arr;
+        }
         #endregion
     }
 }

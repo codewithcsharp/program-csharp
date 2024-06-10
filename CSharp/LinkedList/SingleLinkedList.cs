@@ -1,5 +1,4 @@
 ﻿using CSharp.DataStructure;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CSharp.LinkedList
 {
