@@ -5,7 +5,7 @@ public class Solution
 {
     public static void Main(string[] args)
     {
-/*        #region Reverse array of an Integer
+        #region Reverse array of an Integer
         int parseIntegerInput = Int32.Parse(Console.ReadLine()!);
         int[] array = new int[parseIntegerInput];
         for (int i = 0; i < parseIntegerInput; i++)
@@ -293,13 +293,13 @@ public class Solution
 
         #region Polymerphism Implementation - Interface
 
-        IA Ab = new B();
+        IA Ab = new Base();
         int objA = Ab.IAPrint(1);
         Console.WriteLine(objA);
         int obj1 = Ab.IPrint(13);
         Console.WriteLine(obj1);
 
-        B bc = new();
+        Base bc = new();
         int objB = ((IA)bc).IAPrint(1);
         Console.WriteLine(objB);
         int obj2 = ((IA)bc).IPrint(13);
@@ -349,7 +349,7 @@ public class Solution
         baseClass = new DerivedClass();
         baseClass.ShowInDerived();
 
-        #endregion*/
+        #endregion
 
         #region Find middle index element from node list - Linkedlist
 
