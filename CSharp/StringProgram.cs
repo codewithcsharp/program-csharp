@@ -1,4 +1,9 @@
-﻿using System.Text.RegularExpressions;
+﻿//using CSharp.SinglyLinkedList;
+//using System.Diagnostics.SymbolStore;
+//using SingelyLinkedList = CSharp.SinglyLinkedList;
+using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace CSharp
 {
@@ -824,7 +829,7 @@ namespace CSharp
             int secondHighest = int.MinValue;
             foreach (int i in arr)
             {
-                if(i > highest)
+                if (i > highest)
                 {
                     secondHighest = highest;
                     highest = i;
@@ -839,10 +844,86 @@ namespace CSharp
         #endregion
 
         #region Short an Array : Shorting Technique - Bubble Short
+
+        // int[] array = { 1, 2, 3, 4, 5, 6, 7, 0, 17, 15, 23, 24 };
         public static int[] BubbleShort(int[] arr)
         {
             return arr;
         }
+
+        #endregion
+
+        #region Short an Array : Shorting Technique - Quick Short
+
+        // int[] array = { 1, 2, 3, 4, 5, 6, 7, 0, 17, 15, 23, 24 };
+
+        public static int[] QuickShort(int[] arr) 
+        {
+            QuickShort(arr, 0, arr.Length - 1);
+
+            return arr; 
+        }
+
+        private static void QuickShort(int[] arr, int left, int right)
+        {
+            if (left < right)
+            {
+                int pivotIndex = Partition(arr, left, right);
+                QuickShort(arr, left, pivotIndex - 1);
+                QuickShort(arr, pivotIndex, right);
+            }
+        }
+
+
+        private static int Partition(int[] arr, int left, int right)
+        {
+            int pivot = arr[left];
+            while (left <= right)
+            {
+                while (arr[left] < pivot)
+                {
+                    left++;
+                }
+                while (arr[right] > pivot)
+                {
+                    right--;
+                }
+                if (left <= right)
+                {
+                    int temp = arr[left];
+                    arr[left] = arr[right];
+                    arr[right] = temp;
+                    left++;
+                    right--;
+                }
+
+            }
+            return left;
+        }
+
+        #endregion
+
+        #region Find common item in two list - List Problem
+        public static List<int> FindCommonItem()
+        {
+            List<int> l1 = new() { 1, 2, 3, 4, 5, 6 };
+            List<int> l2 = new() { 5, 6, 7, 8, 9, 10 };
+            List<int> common = l2.Where(item => l1.Contains(item)).ToList();
+            return common;
+        }
+
+        #endregion
+
+        #region Find middle index element from node list - Linkedlist
+
+        // Find middle index element from node list of the Linked List
+
+        //StringProgram..SingleLinkedList list = new SingleLinkedList();
+        //linkedLst.Add(1);
+        //list.Add(3);
+
+        List<int> ints = new() { 1, 2, 3, 5, 7, 40, 60, 100, 4 };
+
         #endregion
     }
 }

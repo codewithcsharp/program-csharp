@@ -1,327 +1,372 @@
 using CSharp;
+using CSharp.LinkedList;
 using StringProgram = CSharp.StringProgram;
 public class Solution
 {
     public static void Main(string[] args)
     {
-        /*        #region Reverse array of an Integer
-                int parseIntegerInput = Int32.Parse(Console.ReadLine()!);
-                int[] array = new int[parseIntegerInput];
-                for (int i = 0; i < parseIntegerInput; i++)
-                {
-                    array[i] = Int32.Parse(Console.ReadLine()!);
-                }
-                var arrays = StringProgram.ReverseArray(array);
-                Console.WriteLine(String.Join(' ', arrays));
-                #endregion
+/*        #region Reverse array of an Integer
+        int parseIntegerInput = Int32.Parse(Console.ReadLine()!);
+        int[] array = new int[parseIntegerInput];
+        for (int i = 0; i < parseIntegerInput; i++)
+        {
+            array[i] = Int32.Parse(Console.ReadLine()!);
+        }
+        var arrays = StringProgram.ReverseArray(array);
+        Console.WriteLine(String.Join(' ', arrays));
+        #endregion
 
-                #region Reverse a String
+        #region Reverse a String
 
-                string stringReverseInput = Console.ReadLine()!;
-                string rev = StringProgram.ReverseString(stringReverseInput);
+        string stringReverseInput = Console.ReadLine()!;
+        string rev = StringProgram.ReverseString(stringReverseInput);
 
-                Console.WriteLine(rev);
+        Console.WriteLine(rev);
 
-                #endregion
+        #endregion
 
-                #region Combine two String Array into Single Array.
+        #region Combine two String Array into Single Array.
 
-                string firstStringArrayInput = Console.ReadLine()!;
-                string[] firstArray = new string[firstStringArrayInput.Length];
-                string secondStringArrayInput = Console.ReadLine()!;
-                string[] secondArray = new string[secondStringArrayInput.Length];
-                string[] finalArray = StringProgram.CombineTwoArray(firstArray!, secondArray!);
+        string firstStringArrayInput = Console.ReadLine()!;
+        string[] firstArray = new string[firstStringArrayInput.Length];
+        string secondStringArrayInput = Console.ReadLine()!;
+        string[] secondArray = new string[secondStringArrayInput.Length];
+        string[] finalArray = StringProgram.CombineTwoArray(firstArray!, secondArray!);
 
-                for (int i = 0; i < finalArray.Length; i++)
-                {
-                    Console.WriteLine(finalArray[i] + " ");
-                }
+        for (int i = 0; i < finalArray.Length; i++)
+        {
+            Console.WriteLine(finalArray[i] + " ");
+        }
 
-                #endregion
+        #endregion
 
-                #region Reverse a Sentance of Strings.
+        #region Reverse a Sentance of Strings.
 
-                string stringWordInput = Console.ReadLine()!;
-                string[] reverseStringWordArray = StringProgram.ReverseStringWord(stringWordInput);
+        string stringWordInput = Console.ReadLine()!;
+        string[] reverseStringWordArray = StringProgram.ReverseStringWord(stringWordInput);
 
-                for (int i = 0; i <= reverseStringWordArray.Length - 1; i++)
-                {
-                    Console.Write(reverseStringWordArray[i] + " ");
-                }
+        for (int i = 0; i <= reverseStringWordArray.Length - 1; i++)
+        {
+            Console.Write(reverseStringWordArray[i] + " ");
+        }
 
-                #endregion
+        #endregion
 
-                #region Find the fixed Charector from given String.
+        #region Find the fixed Charector from given String.
 
-                string stringWord = Console.ReadLine()!;
-                char fixedcharector = Char.Parse(Console.ReadLine()!);
-                int index = StringProgram.FindIndexOfCharector(stringWord, fixedcharector);
+        string stringWord = Console.ReadLine()!;
+        char fixedcharector = Char.Parse(Console.ReadLine()!);
+        int index = StringProgram.FindIndexOfCharector(stringWord, fixedcharector);
 
-                Console.WriteLine(index);
+        Console.WriteLine(index);
 
-                #endregion
+        #endregion
 
-                #region Is Number is Even Number
+        #region Is Number is Even Number
 
-                int findEvenNumber = Int32.Parse(Console.ReadLine()!);
-                string result = StringProgram.IsEven(findEvenNumber);
+        int findEvenNumber = Int32.Parse(Console.ReadLine()!);
+        string result = StringProgram.IsEven(findEvenNumber);
 
-                Console.WriteLine(result);
+        Console.WriteLine(result);
 
-                #endregion
+        #endregion
 
-                #region Is Number is Prime Number
+        #region Is Number is Prime Number
 
-                int findPrimeNumber = Int32.Parse(Console.ReadLine()!);
-                string response = StringProgram.IsPrime(findPrimeNumber);
-                Console.WriteLine(response);
+        int findPrimeNumber = Int32.Parse(Console.ReadLine()!);
+        string response = StringProgram.IsPrime(findPrimeNumber);
+        Console.WriteLine(response);
 
-                #endregion
+        #endregion
 
-                #region Is Number Armstrong Number
+        #region Is Number Armstrong Number
 
-                int findArmstrongNumber = Int32.Parse(Console.ReadLine()!);
-                string ArmstrongNumber = StringProgram.IsArmStrong(findArmstrongNumber);
-                Console.WriteLine(ArmstrongNumber);
+        int findArmstrongNumber = Int32.Parse(Console.ReadLine()!);
+        string ArmstrongNumber = StringProgram.IsArmStrong(findArmstrongNumber);
+        Console.WriteLine(ArmstrongNumber);
 
-                #endregion
+        #endregion
 
-                #region Is String is Pelindrom or Not
+        #region Is String is Pelindrom or Not
 
-                string pelindromeInputstring = Console.ReadLine()!;
-                string OutputPelindrome = StringProgram.IsPelindrome(pelindromeInputstring);
-                Console.WriteLine(OutputPelindrome);
+        string pelindromeInputstring = Console.ReadLine()!;
+        string OutputPelindrome = StringProgram.IsPelindrome(pelindromeInputstring);
+        Console.WriteLine(OutputPelindrome);
 
-                #endregion
+        #endregion
 
-                #region Find the Common Prefix from an String Array
+        #region Find the Common Prefix from an String Array
 
-                string commonInputString = Console.ReadLine()!;
-                string[] commonInputStringArray = commonInputString.Split(',');
+        string commonInputString = Console.ReadLine()!;
+        string[] commonInputStringArray = commonInputString.Split(',');
 
-                string commonOutputResult = StringProgram.CommonString(commonInputStringArray);
-                Console.WriteLine(commonOutputResult);
+        string commonOutputResult = StringProgram.CommonString(commonInputStringArray);
+        Console.WriteLine(commonOutputResult);
 
-                #endregion
+        #endregion
 
-                #region Find Duplicate Frequency in the given String
-
-                string duplicateInputString = Console.ReadLine()!;
-                char[] duplicateOutputArray = StringProgram.DuplicateFrequency(duplicateInputString);
+        #region Find Duplicate Frequency in the given String
 
-                for (int i = 0; i <= duplicateOutputArray.Length - 1; i++)
-                {
-                    Console.Write(duplicateOutputArray[i] + " ");
-                }
+        string duplicateInputString = Console.ReadLine()!;
+        char[] duplicateOutputArray = StringProgram.DuplicateFrequency(duplicateInputString);
 
-                #endregion
+        for (int i = 0; i <= duplicateOutputArray.Length - 1; i++)
+        {
+            Console.Write(duplicateOutputArray[i] + " ");
+        }
 
-                #region Find the Common item from the given two Integer Array
+        #endregion
 
-                int[] lstUser = StringProgram.SecondMaxElement();
-                for (int i = 0; i < lstUser.Length; i++)
-                {
-                    Console.WriteLine(lstUser[i]);
-                }
+        #region Find the Common item from the given two Integer Array
 
-                #endregion
+        int[] lstUser = StringProgram.SecondMaxElement();
+        for (int i = 0; i < lstUser.Length; i++)
+        {
+            Console.WriteLine(lstUser[i]);
+        }
 
-                #region Reverse a string without using inbuilt method
+        #endregion
 
-                string StringInput = Console.ReadLine()!;
-                string ReverseStringOutput = StringProgram.ReverseWithoutInbuiltString(StringInput);
-                Console.WriteLine(ReverseStringOutput);
+        #region Reverse a string without using inbuilt method
 
-                #endregion
+        string StringInput = Console.ReadLine()!;
+        string ReverseStringOutput = StringProgram.ReverseWithoutInbuiltString(StringInput);
+        Console.WriteLine(ReverseStringOutput);
 
-                int Even = int.Parse(Console.ReadLine()!);
-                StringProgram.PrintEvenPeramid(Even);
+        #endregion
 
-                int Odd = int.Parse(Console.ReadLine()!);
-                StringProgram.PrintOddPeramid(Odd);
+        #region Star printing problem - C#
 
-                int Left = int.Parse(Console.ReadLine()!);
-                StringProgram.PrintLeftStarPeramid(Left);
+        int Even = int.Parse(Console.ReadLine()!);
+        StringProgram.PrintEvenPeramid(Even);
 
-                int Right = int.Parse(Console.ReadLine()!);
-                StringProgram.PrintRightStarPeramid(Right);
+        int Odd = int.Parse(Console.ReadLine()!);
+        StringProgram.PrintOddPeramid(Odd);
 
-                int Parllel = int.Parse(Console.ReadLine()!);
-                StringProgram.PrintStarParllel(Parllel);
+        int Left = int.Parse(Console.ReadLine()!);
+        StringProgram.PrintLeftStarPeramid(Left);
 
-                int Down = int.Parse(Console.ReadLine()!);
-                StringProgram.PrintDownStar(Down);
+        int Right = int.Parse(Console.ReadLine()!);
+        StringProgram.PrintRightStarPeramid(Right);
 
-                int a = int.Parse(Console.ReadLine()!);
-                int b = int.Parse(Console.ReadLine()!);
-                Console.WriteLine(a + " " + b);
-                StringProgram.SwapNumberUsingThirdVariable(a, b);
-                Console.WriteLine(a + " " + b);
+        int Parllel = int.Parse(Console.ReadLine()!);
+        StringProgram.PrintStarParllel(Parllel);
 
-                int x = int.Parse(Console.ReadLine()!);
-                int y = int.Parse(Console.ReadLine()!);
-                Console.WriteLine(x + " " + y);
-                StringProgram.SwapNumberWithoutUsingThirdVariable(x, y);
-                Console.WriteLine(x + " " + y);
+        int Down = int.Parse(Console.ReadLine()!);
+        StringProgram.PrintDownStar(Down);
 
-                int X = int.Parse(Console.ReadLine()!);
-                int Y = int.Parse(Console.ReadLine()!);
-                Console.WriteLine(X + " " + Y);
-                StringProgram.SwapNumberUsingThirdVariableInGenric(ref X, ref Y);
-                Console.WriteLine(X + " " + Y);
+        int a = int.Parse(Console.ReadLine()!);
+        int b = int.Parse(Console.ReadLine()!);
+        Console.WriteLine(a + " " + b);
+        StringProgram.SwapNumberUsingThirdVariable(a, b);
+        Console.WriteLine(a + " " + b);
 
-                string userInput = Console.ReadLine()!;
-                string[] inputArray = userInput.Split(' ');
-                int[] integerArray = new int[inputArray.Length];
+        int x = int.Parse(Console.ReadLine()!);
+        int y = int.Parse(Console.ReadLine()!);
+        Console.WriteLine(x + " " + y);
+        StringProgram.SwapNumberWithoutUsingThirdVariable(x, y);
+        Console.WriteLine(x + " " + y);
 
-                for (int i = 0; i < inputArray.Length; i++)
-                {
-                    if (int.TryParse(inputArray[i], out int number))
-                    {
-                        integerArray[i] = number;
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Invalid input: '{inputArray[i]}' is not a valid integer.");
-                        return;
-                    }
-                }
+        int X = int.Parse(Console.ReadLine()!);
+        int Y = int.Parse(Console.ReadLine()!);
+        Console.WriteLine(X + " " + Y);
+        StringProgram.SwapNumberUsingThirdVariableInGenric(ref X, ref Y);
+        Console.WriteLine(X + " " + Y);
 
-                string OutputString = StringProgram.IsMonotalic(integerArray);
-                Console.WriteLine(OutputString);
+        string userInput = Console.ReadLine()!;
+        string[] inputArray = userInput.Split(' ');
+        int[] integerArray = new int[inputArray.Length];
 
-                string str = Console.ReadLine()!;
-                StringProgram.OccrenceChar(str);
+        for (int i = 0; i < inputArray.Length; i++)
+        {
+            if (int.TryParse(inputArray[i], out int number))
+            {
+                integerArray[i] = number;
+            }
+            else
+            {
+                Console.WriteLine($"Invalid input: '{inputArray[i]}' is not a valid integer.");
+                return;
+            }
+        }
 
-                int target = 6;
-                int[] numbers = { 3, 2, 4 };
-                StringProgram.TwoSums(numbers, target);
+        string OutputString = StringProgram.IsMonotalic(integerArray);
+        Console.WriteLine(OutputString);
 
-                #region Tuple Practice problem in C#
-                // 1. Technique of accessing tuple
-                var person1 = Tuple.Create("Abhitosh Kumar", 1);
-                Console.WriteLine($"Name : {person1.Item1} and Age : {person1.Item2}");
+        string str = Console.ReadLine()!;
+        StringProgram.OccrenceChar(str);
 
-                // 2. Technique of accessing tuple using named elements
-                var person2 = (Name: "Rohit Sharma", Age: 28);
-                Console.WriteLine($"Name : {person2.Name} and Age : {person2.Age}");
+        int target = 6;
+        int[] numbers = { 3, 2, 4 };
+        StringProgram.TwoSums(numbers, target);
 
-                // 3. Technique of accessing tuple using function
-                var (Name, Age) = StringProgram.CheckTypeOfData();
+        #endregion
 
-                // Display the retrieved data
-                Console.WriteLine($"Name: {Name}, Age: {Age}");
-                #endregion
+        #region Tuple Practice problem in C#
+        // 1. Technique of accessing tuple
+        var person1 = Tuple.Create("Abhitosh Kumar", 1);
+        Console.WriteLine($"Name : {person1.Item1} and Age : {person1.Item2}");
 
-                #region Tuple - Find max and min value in C#
-                int[] arr = { 1, 2, 3, 4, 5, 6 };
+        // 2. Technique of accessing tuple using named elements
+        var person2 = (Name: "Rohit Sharma", Age: 28);
+        Console.WriteLine($"Name : {person2.Name} and Age : {person2.Age}");
 
-                var FindOutput = StringProgram.FindMinMax(arr);
+        // 3. Technique of accessing tuple using function
+        var (Name, Age) = StringProgram.CheckTypeOfData();
 
-                Console.WriteLine($"Minimum value : {FindOutput.Item1}");
+        // Display the retrieved data
+        Console.WriteLine($"Name: {Name}, Age: {Age}");
+        #endregion
 
-                Console.WriteLine($"Maximum value : {FindOutput.Item2}");
+        #region Tuple - Find max and min value in C#
+        int[] arr = { 1, 2, 3, 4, 5, 6 };
 
-                #endregion
+        var FindOutput = StringProgram.FindMinMax(arr);
 
-                #region Remove Duplicates from an Array
-                int[] sortedArray = { 1, 2, 2, 3, 4, 4, 4, 5, 5 };
+        Console.WriteLine($"Minimum value : {FindOutput.Item1}");
 
-                // Call the function to remove duplicates
-                int[] uniqueArray = StringProgram.RemoveDuplicates(sortedArray);
+        Console.WriteLine($"Maximum value : {FindOutput.Item2}");
 
-                Console.WriteLine("Array with duplicates removed:");
-                foreach (int num in uniqueArray)
-                {
-                    Console.Write(num + " ");
-                }
-                Console.WriteLine();
-                #endregion
+        #endregion
 
-                #region Find Second Largest element in Array in C#
-                int[] arrOut = { 2, 4, 3, 8, 6, 9, 13 };
-                int outputSecondLargest = StringProgram.FindSecondLargest(arrOut);
-                Console.WriteLine("Second largest number is: " + outputSecondLargest);  // Output: 9
-                #endregion
+        #region Remove Duplicates from an Array
+        int[] sortedArray = { 1, 2, 2, 3, 4, 4, 4, 5, 5 };
 
-                #region Shift pair numbers in last - Array
-                int[] pair = { 2, 2, 2, 4, 5, 6, 7, 1, 1, 1, 8, 9, 10, 1 };
-                Console.WriteLine("Original Array:");
-                StringProgram.PrintShiftPairNumbersInLast(pair);
+        // Call the function to remove duplicates
+        int[] uniqueArray = StringProgram.RemoveDuplicates(sortedArray);
 
-                int[] shiftedArray = StringProgram.ShiftPairNumbersInLast(pair);
-                Console.WriteLine("\nArray after shifting elements with multiple occurrences to end:");
-                StringProgram.PrintShiftPairNumbersInLast(shiftedArray);
-                #endregion
+        Console.WriteLine("Array with duplicates removed:");
+        foreach (int num in uniqueArray)
+        {
+            Console.Write(num + " ");
+        }
+        Console.WriteLine();
+        #endregion
 
-                #region Find the longest subarrays in the Array
+        #region Find Second Largest element in Array in C#
+        int[] arrOut = { 2, 4, 3, 8, 6, 9, 13 };
+        int outputSecondLargest = StringProgram.FindSecondLargest(arrOut);
+        Console.WriteLine("Second largest number is: " + outputSecondLargest);  // Output: 9
+        #endregion
 
-                int[] longArrayInput = { 5, 3, 10, 2, 1, 20 };
-                List<int[]> Output = StringProgram.LongestSubArray(longArrayInput);
-                Console.WriteLine(Output);
-                Console.WriteLine("Maximum Subarrays where the first element is greater than the second:");
-                foreach (var subarray in Output)
-                {
-                    Console.Write("{ " + string.Join(", ", subarray) + " }");
-                }
+        #region Shift pair numbers in last - Array
+        int[] pair = { 2, 2, 2, 4, 5, 6, 7, 1, 1, 1, 8, 9, 10, 1 };
+        Console.WriteLine("Original Array:");
+        StringProgram.PrintShiftPairNumbersInLast(pair);
 
-                #endregion
+        int[] shiftedArray = StringProgram.ShiftPairNumbersInLast(pair);
+        Console.WriteLine("\nArray after shifting elements with multiple occurrences to end:");
+        StringProgram.PrintShiftPairNumbersInLast(shiftedArray);
+        #endregion
 
-                #region Print Combination on Array
-                int[] arrayInput = { 1, 2, 3, 4, 5, 6, 8, 11, 10, 9, 7 };
-                int arrayIndex = 12;
-                var output = StringProgram.PrintCombination(arrayInput, arrayIndex);
+        #region Find the longest subarrays in the Array
 
-                foreach (var i in output)
-                {
-                    Console.WriteLine($"[{i[0]},,{i[1]}]");
-                }
-                #endregion
+        int[] longArrayInput = { 5, 3, 10, 2, 1, 20 };
+        List<int[]> Output = StringProgram.LongestSubArray(longArrayInput);
+        Console.WriteLine(Output);
+        Console.WriteLine("Maximum Subarrays where the first element is greater than the second:");
+        foreach (var subarray in Output)
+        {
+            Console.Write("{ " + string.Join(", ", subarray) + " }");
+        }
 
-                #region Print Sum of string Itrate Integers - Total
+        #endregion
 
-                string strInput = "xayz20yt5ttu10";
-                int intOutput = StringProgram.SumStringItrateInteger(strInput);
-                Console.WriteLine(intOutput);
+        #region Print Combination on Array
+        int[] arrayInput = { 1, 2, 3, 4, 5, 6, 8, 11, 10, 9, 7 };
+        int arrayIndex = 12;
+        var output = StringProgram.PrintCombination(arrayInput, arrayIndex);
 
-                #endregion
+        foreach (var i in output)
+        {
+            Console.WriteLine($"[{i[0]},,{i[1]}]");
+        }
+        #endregion
 
-                #region Polymerphism Implementation - Interface
+        #region Print Sum of string Itrate Integers - Total
 
-                IA Ab = new B();
-                int objA = Ab.IAPrint(1);
-                Console.WriteLine(objA);
-                int obj1 = Ab.IPrint(13);
-                Console.WriteLine(obj1);
+        string strInput = "xayz20yt5ttu10";
+        int intOutput = StringProgram.SumStringItrateInteger(strInput);
+        Console.WriteLine(intOutput);
 
-                B bc = new();
-                int objB = ((IA)bc).IAPrint(1);
-                Console.WriteLine(objB);
-                int obj2 = ((IA)bc).IPrint(13);
-                Console.WriteLine(obj2);
+        #endregion
 
-                #endregion
+        #region Polymerphism Implementation - Interface
 
-                #region Merge Two Shorted Array - Array
+        IA Ab = new B();
+        int objA = Ab.IAPrint(1);
+        Console.WriteLine(objA);
+        int obj1 = Ab.IPrint(13);
+        Console.WriteLine(obj1);
 
-                int[] first = { 1, 2, 3, 4, 5, 6, 7 };
-                int[] second = { 8, 9, 10, 11, 12, 13, 14 };
+        B bc = new();
+        int objB = ((IA)bc).IAPrint(1);
+        Console.WriteLine(objB);
+        int obj2 = ((IA)bc).IPrint(13);
+        Console.WriteLine(obj2);
 
-                int[] finalOutput = StringProgram.MergeTwoShortedArray(first, second);
+        #endregion
 
-                foreach (int i in finalOutput)
-                {
-                    Console.Write(i + " ");
-                }
+        #region Merge Two Shorted Array - Array
 
-                #endregion */
+        int[] first = { 1, 2, 3, 4, 5, 6, 7 };
+        int[] second = { 8, 9, 10, 11, 12, 13, 14 };
 
-        int[] input = { 1, 2, 3, 4, 5, 6, 7, 0, 17, 15, 23, 24 };
-        int output = StringProgram.FindSecondHeighestInteger(input);
-        Console.WriteLine(output);
+        int[] finalOutput = StringProgram.MergeTwoShortedArray(first, second);
 
-        #region Short an Array : Shorting Technique - Bubble Short
+        foreach (int i in finalOutput)
+        {
+            Console.Write(i + " ");
+        }
 
+        #endregion
+
+        #region Find second heighest integer - Integer
+
+        int[] inputFindSecondHeighestInteger = { 1, 2, 3, 4, 5, 6, 7, 0, 17, 15, 23, 24 };
+        int outputFindSecondHeighestInteger = StringProgram.FindSecondHeighestInteger(inputFindSecondHeighestInteger);
+        Console.WriteLine(outputFindSecondHeighestInteger);
+
+        #endregion
+
+        #region Short an Array : Shorting Technique - Quick Short
+
+        int[] inputQuickShort = { 1, 2, 3, 4, 5, 6, 7, 20, 17, 15, 23, 24 };
+
+        int[] outputQuickShort = StringProgram.QuickShort(inputQuickShort);
+
+        foreach (int i in outputQuickShort)
+        {
+            Console.Write(i + " ");
+        }
+
+        #endregion
+
+        #region Output of Polymerphism - Polymerphism
+
+        BaseClass baseClass = new BaseClass();
+        baseClass.ShowInDerived();
+        baseClass = new DerivedClass();
+        baseClass.ShowInDerived();
+
+        #endregion*/
+
+        #region Find middle index element from node list - Linkedlist
+
+        SingleLinkedList list = new SingleLinkedList();
+        list.Add(1);
+        list.Add(2);
+        list.Add(3);
+        list.Add(5);
+        list.Add(7);
+        list.Add(40);
+        list.Add(60);
+        list.Add(100);
+        list.Add(4);
+
+        int middleElement = SingleLinkedList.FindMiddleIndexFromNodeList(list.Head!);
+        Console.WriteLine($"Middle Element from the Node List : { middleElement }");
+        
         #endregion
     }
 }

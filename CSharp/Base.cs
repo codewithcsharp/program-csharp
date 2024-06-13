@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp
 {
-    public class B : IA
+    public class Base : IA
     {
         public string Name => throw new NotImplementedException();
 
@@ -31,6 +31,12 @@ namespace CSharp
         {
             i = (i + 20) % 10;
             return i;
+        }
+
+
+        public void ShowInB()
+        {
+            Console.WriteLine("Hello Show in B");
         }
     }
 }

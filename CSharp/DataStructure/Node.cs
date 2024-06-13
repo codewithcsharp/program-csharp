@@ -8,7 +8,13 @@ namespace CSharp.DataStructure
 {
     public class Node
     {
-        public object? data = null;
-        public Node? next = null;
+        public int Data;
+        public Node? Next;
+
+        public Node(int item)
+        {
+            this.Data = item;
+            this.Next = null;
+        }
     }
 }
