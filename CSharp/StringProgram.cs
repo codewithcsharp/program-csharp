@@ -1,9 +1,4 @@
-﻿//using CSharp.SinglyLinkedList;
-//using System.Diagnostics.SymbolStore;
-//using SingelyLinkedList = CSharp.SinglyLinkedList;
-using System.Collections.Generic;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace CSharp
 {
@@ -923,6 +918,37 @@ namespace CSharp
         //list.Add(3);
 
         List<int> ints = new() { 1, 2, 3, 5, 7, 40, 60, 100, 4 };
+
+        #endregion
+
+        #region Find Longest SubSequence - Array
+
+        public static int FindLongestSub(int[] arr)
+        {
+            int logestSubArray = 0;
+            HashSet<int> result = new(arr);
+            foreach (var i in arr)
+            {
+                if (!result.Contains(i - 1))
+                {
+                    int current = i;
+                    int curentItem = 1;
+                    while (result.Contains(current + 1))
+                    {
+                        current++;
+                        curentItem++;
+                    }
+                    logestSubArray = Math.Max(logestSubArray, curentItem);
+                }
+            }
+            return logestSubArray;
+        }
+
+        static void Main(string[] args)
+        {
+            int[] longArray = { 1, 9, 3, 10, 4, 20, 2 };
+            Console.WriteLine("Longest consecutive subsequence length is " + StringProgram.FindLongestSub(longArray));
+        }
 
         #endregion
     }
