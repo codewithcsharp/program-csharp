@@ -16,8 +16,6 @@
     <Folder Include="SOLID\DIP\ProblemStatement\" />
     <Folder Include="SOLID\ICP\SolutionStatement\" />
     <Folder Include="SOLID\ICP\ProblemStatement\" />
-    <Folder Include="SOLID\LSP\SolutionStatement\" />
-    <Folder Include="SOLID\LSP\ProblemStatement\" />
   </ItemGroup>
 
   <ItemGroup>
