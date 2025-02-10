@@ -123,7 +123,7 @@ namespace Diffrent.Practice.Solution.Pattern
 
                 int digit = num % 10;
                 num /= 10;
-                result += (int)Math.Pow(digit, count);
+                result += (int)System.Math.Pow(digit, count);
             }
             return temp == result;
         }
@@ -227,7 +227,7 @@ namespace Diffrent.Practice.Solution.Pattern
             int[] l2 = { 200, 250, 50, 7, 90 };
             Array.Sort(l2);
 
-            int[] lst = new int[Math.Min(l1.Length, l2.Length)];
+            int[] lst = new int[System.Math.Min(l1.Length, l2.Length)];
             int temp = 0, i = 0, j = 0;
 
             while (i < l1.Length && j < l2.Length)
@@ -938,7 +938,7 @@ namespace Diffrent.Practice.Solution.Pattern
                         current++;
                         curentItem++;
                     }
-                    logestSubArray = Math.Max(logestSubArray, curentItem);
+                    logestSubArray = System.Math.Max(logestSubArray, curentItem);
                 }
             }
             return logestSubArray;
