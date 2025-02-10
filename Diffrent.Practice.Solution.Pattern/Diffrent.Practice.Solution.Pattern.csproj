@@ -12,10 +12,6 @@
     <Folder Include="DesignPatterns\BuilderDesignPattern\" />
     <Folder Include="DesignPatterns\RepositoryDesignPattern\" />
     <Folder Include="ExtentionMethod\Interface\" />
-    <Folder Include="SOLID\DIP\SolutionStatement\" />
-    <Folder Include="SOLID\DIP\ProblemStatement\" />
-    <Folder Include="SOLID\ICP\SolutionStatement\" />
-    <Folder Include="SOLID\ICP\ProblemStatement\" />
   </ItemGroup>
 
   <ItemGroup>
