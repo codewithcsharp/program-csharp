@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace CSharp
+namespace Diffrent.Practice.Solution.Pattern
 {
     public class StringProgram
     {
@@ -430,7 +430,7 @@ namespace CSharp
                     Isdec = false; ;
                 }
             }
-            return (Isinc | Isdec) ? "Monotonic" : "Not Monotonic";
+            return Isinc | Isdec ? "Monotonic" : "Not Monotonic";
         }
 
         #endregion
@@ -524,7 +524,7 @@ namespace CSharp
             int max = int.MinValue;
             foreach (int currentItem in arr)
             {
-                if ((currentItem < min) || (currentItem > max))
+                if (currentItem < min || currentItem > max)
                 {
                     min = currentItem;
                     max = currentItem;
@@ -852,11 +852,11 @@ namespace CSharp
 
         // int[] array = { 1, 2, 3, 4, 5, 6, 7, 0, 17, 15, 23, 24 };
 
-        public static int[] QuickShort(int[] arr) 
+        public static int[] QuickShort(int[] arr)
         {
             QuickShort(arr, 0, arr.Length - 1);
 
-            return arr; 
+            return arr;
         }
 
         private static void QuickShort(int[] arr, int left, int right)
@@ -947,7 +947,7 @@ namespace CSharp
         static void Main(string[] args)
         {
             int[] longArray = { 1, 9, 3, 10, 4, 20, 2 };
-            Console.WriteLine("Longest consecutive subsequence length is " + StringProgram.FindLongestSub(longArray));
+            Console.WriteLine("Longest consecutive subsequence length is " + FindLongestSub(longArray));
         }
 
         #endregion
