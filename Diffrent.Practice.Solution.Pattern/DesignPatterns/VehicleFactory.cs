@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CSharp.FactoryDesign
+﻿namespace Diffrent.Practice.Solution.Pattern.DesignPatterns
 {
     public abstract class AutoMobilesFactory
     {

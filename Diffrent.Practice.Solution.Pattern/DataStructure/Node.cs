@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CSharp.DataStructure
+﻿namespace Diffrent.Practice.Solution.Pattern.DataStructure
 {
     public class Node
     {
@@ -13,8 +7,8 @@ namespace CSharp.DataStructure
 
         public Node(int item)
         {
-            this.Data = item;
-            this.Next = null;
+            Data = item;
+            Next = null;
         }
     }
 }

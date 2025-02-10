@@ -1,6 +1,6 @@
-﻿using CSharp.DataStructure;
+﻿using Diffrent.Practice.Solution.Pattern.DataStructure;
 
-namespace CSharp.LinkedList
+namespace Diffrent.Practice.Solution.Pattern.SinglyLinkedList
 {
     public class SingleLinkedList
     {
@@ -49,7 +49,7 @@ namespace CSharp.LinkedList
             {
                 Head.Next = Head;
                 Head = Item;
-                
+
                 return;
             }
 
@@ -68,7 +68,7 @@ namespace CSharp.LinkedList
 
         public static bool CheckLinkedList(Node Head)
         {
-            if(Head == null) { return false; }
+            if (Head == null) { return false; }
 
             Node left = Head;
             Node right = Head;

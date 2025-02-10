@@ -1,7 +1,8 @@
-using CSharp.DataStructure;
-using CSharp.LinkedList;
+using CSharp;
+using Diffrent.Practice.Solution.Pattern.DataStructure;
+using Diffrent.Practice.Solution.Pattern.SinglyLinkedList;
 
-namespace CSharp
+namespace Diffrent.Practice.Solution.Pattern
 {
     public class Program
     {
@@ -60,14 +61,14 @@ namespace CSharp
                     case 1:
                         #region Reverse array of an Integer
 
-                        int parseIntegerInput = Int32.Parse(Console.ReadLine()!);
+                        int parseIntegerInput = int.Parse(Console.ReadLine()!);
                         int[] array = new int[parseIntegerInput];
                         for (int i = 0; i < parseIntegerInput; i++)
                         {
-                            array[i] = Int32.Parse(Console.ReadLine()!);
+                            array[i] = int.Parse(Console.ReadLine()!);
                         }
                         var arrays = StringProgram.ReverseArray(array);
-                        Console.WriteLine(String.Join(' ', arrays));
+                        Console.WriteLine(string.Join(' ', arrays));
 
                         #endregion
                         break;
@@ -114,7 +115,7 @@ namespace CSharp
                         #region Find the fixed Charector from given String - C#
 
                         string stringWord = Console.ReadLine()!;
-                        char fixedcharector = Char.Parse(Console.ReadLine()!);
+                        char fixedcharector = char.Parse(Console.ReadLine()!);
                         int index = StringProgram.FindIndexOfCharector(stringWord, fixedcharector);
 
                         Console.WriteLine(index);
@@ -124,7 +125,7 @@ namespace CSharp
                     case 6:
                         #region Check Is Number is Even Number - C#
 
-                        int findEvenNumber = Int32.Parse(Console.ReadLine()!);
+                        int findEvenNumber = int.Parse(Console.ReadLine()!);
                         string result = StringProgram.IsEven(findEvenNumber);
 
                         Console.WriteLine(result);
@@ -134,7 +135,7 @@ namespace CSharp
                     case 7:
                         #region Check Is Number Armstrong Number - C#
 
-                        int findArmstrongNumber = Int32.Parse(Console.ReadLine()!);
+                        int findArmstrongNumber = int.Parse(Console.ReadLine()!);
                         string ArmstrongNumber = StringProgram.IsArmStrong(findArmstrongNumber);
                         Console.WriteLine(ArmstrongNumber);
 
@@ -504,8 +505,10 @@ namespace CSharp
                         #endregion
                         break;
                     case 40:
+                        #region Check Longest consecutive subsequence length
                         int[] longArray = { 1, 9, 3, 10, 4, 20, 2 };
                         Console.WriteLine("Longest consecutive subsequence length is " + StringProgram.FindLongestSub(longArray));
+                        #endregion
                         break;
                     default:
                         Console.WriteLine("Something went wrong");
