@@ -921,7 +921,7 @@ namespace Diffrent.Practice.Solution.Pattern
 
         #endregion
 
-        #region Find Longest SubSequence - Array
+        #region Find the Longest Sub Sequence Array - Array
 
         public static int FindLongestSub(int[] arr)
         {
@@ -942,12 +942,6 @@ namespace Diffrent.Practice.Solution.Pattern
                 }
             }
             return logestSubArray;
-        }
-
-        static void Main(string[] args)
-        {
-            int[] longArray = { 1, 9, 3, 10, 4, 20, 2 };
-            Console.WriteLine("Longest consecutive subsequence length is " + FindLongestSub(longArray));
         }
 
         #endregion

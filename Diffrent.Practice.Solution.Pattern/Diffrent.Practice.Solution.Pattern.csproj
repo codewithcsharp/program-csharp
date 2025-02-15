@@ -12,6 +12,8 @@
     <Folder Include="DesignPatterns\BuilderDesignPattern\" />
     <Folder Include="DesignPatterns\RepositoryDesignPattern\" />
     <Folder Include="ExtentionMethod\Interface\" />
+    <Folder Include="ObjectOrientedPrograming\Polymerphism\CompiletimePolymerphism\MethodOverLoading\" />
+    <Folder Include="ObjectOrientedPrograming\Polymerphism\RuntimePolymerphism\MethodOverRidding\" />
   </ItemGroup>
 
   <ItemGroup>

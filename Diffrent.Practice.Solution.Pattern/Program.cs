@@ -1,12 +1,15 @@
-using CSharp;
 using Diffrent.Practice.Solution.Pattern.DataStructure;
-using Diffrent.Practice.Solution.Pattern.SinglyLinkedList;
+using Diffrent.Practice.Solution.Pattern.DataStructure.SinglyLinkedList;
+using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Abstaraction.Interfaces;
+using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.BaseClasses;
+using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.DerivedClasses;
+using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.Interfaces;
 
 namespace Diffrent.Practice.Solution.Pattern
 {
-    public class Program
+    public static class Program
     {
-        public static void main(string[] args)
+        public static void Main(string[] args)
         {
             while (true)
             {
@@ -50,6 +53,7 @@ namespace Diffrent.Practice.Solution.Pattern
                 Console.WriteLine($" 38. Print Output of Polymerphism - Polymerphism : ");
                 Console.WriteLine($" 39. Print Find middle index element from node list - Linkedlist : ");
                 Console.WriteLine($" 40. Print Check Node is Circular - Linkedlist : ");
+                Console.WriteLine($" 41. Print Longest Sub Array : ");
 
                 Console.Write("Enter your input choice to run the program :");
 
@@ -397,13 +401,13 @@ namespace Diffrent.Practice.Solution.Pattern
                     case 33:
                         #region Polymerphism Implementation - Interface
 
-                        IA Ab = new Base();
+                        IA Ab = new InterfaceImplementation();
                         int objA = Ab.IAPrint(1);
                         Console.WriteLine(objA);
                         int obj1 = Ab.IPrint(13);
                         Console.WriteLine(obj1);
 
-                        Base bc = new();
+                        InterfaceImplementation bc = new();
                         int objB = ((IA)bc).IAPrint(1);
                         Console.WriteLine(objB);
                         int obj2 = ((IA)bc).IPrint(13);
@@ -452,9 +456,9 @@ namespace Diffrent.Practice.Solution.Pattern
                     case 37:
                         #region Output of Polymerphism - Polymerphism
 
-                        BaseClass baseClass = new BaseClass();
+                        BaseClass baseClass = new();
                         baseClass.ShowInDerived();
-                        baseClass = new DerivedClass();
+                        baseClass = new DerivedClassImplementation();
                         baseClass.ShowInDerived();
 
                         #endregion
@@ -509,6 +513,10 @@ namespace Diffrent.Practice.Solution.Pattern
                         int[] longArray = { 1, 9, 3, 10, 4, 20, 2 };
                         Console.WriteLine("Longest consecutive subsequence length is " + StringProgram.FindLongestSub(longArray));
                         #endregion
+                        break;
+                    case 41:
+                        int[] longestArray = { 1, 9, 3, 10, 4, 20, 2 };
+                        Console.WriteLine("Longest consecutive subsequence length is " + StringProgram.FindLongestSub(longestArray));
                         break;
                     default:
                         Console.WriteLine("Something went wrong");
