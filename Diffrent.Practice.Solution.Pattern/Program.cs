@@ -2,6 +2,7 @@ using Diffrent.Practice.Solution.Pattern.DataStructure;
 using Diffrent.Practice.Solution.Pattern.DataStructure.SinglyLinkedList;
 using Diffrent.Practice.Solution.Pattern.DesignPatterns.FactoryDesignPattern;
 using Diffrent.Practice.Solution.Pattern.DesignPatterns.FactoryDesignPattern.Interfaces;
+using Diffrent.Practice.Solution.Pattern.DesignPatterns.SingletonDesignPattern;
 using Diffrent.Practice.Solution.Pattern.Generics.GenericsUsingWhere;
 using Diffrent.Practice.Solution.Pattern.Generics.GenericsWithoutUsingWhere;
 using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Abstaraction.Interfaces;
@@ -563,6 +564,12 @@ namespace Diffrent.Practice.Solution.Pattern
                         NotificationFactory emailNotification = new EmailNotificationFactory();
                         emailNotification.Notify("");
                         Console.WriteLine("Arithmetic operation in Generic class " + AggregateFunction<int>.Divide(2, 5));
+                        #endregion
+                        break;
+                    case 50:
+                        #region Singleton Design Pattern Code Changes Example
+                        SingletonInstance instance  = SingletonInstance.Instance;
+                        Console.WriteLine("Singleton class Instance " + instance);
                         #endregion
                         break;
                     default:

@@ -4,15 +4,19 @@
     {
         private static SingletonInstance? _instance;
         private static readonly object _lock = new();
+
         private SingletonInstance() { }
 
-        public static SingletonInstance GenrateOnlyOneInstance()
+        public static SingletonInstance Instance
         {
-            lock (_lock)
+            get
             {
-                _instance ??= new SingletonInstance();
+                lock (_lock)
+                {
+                    _instance ??= new SingletonInstance();
+                }
+                return _instance;
             }
-            return _instance;
         }
     }
 }
