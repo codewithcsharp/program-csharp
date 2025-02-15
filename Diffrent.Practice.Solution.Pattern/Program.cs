@@ -1,5 +1,9 @@
 using Diffrent.Practice.Solution.Pattern.DataStructure;
 using Diffrent.Practice.Solution.Pattern.DataStructure.SinglyLinkedList;
+using Diffrent.Practice.Solution.Pattern.DesignPatterns.FactoryDesignPattern;
+using Diffrent.Practice.Solution.Pattern.DesignPatterns.FactoryDesignPattern.Interfaces;
+using Diffrent.Practice.Solution.Pattern.Generics.GenericsUsingWhere;
+using Diffrent.Practice.Solution.Pattern.Generics.GenericsWithoutUsingWhere;
 using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Abstaraction.Interfaces;
 using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.BaseClasses;
 using Diffrent.Practice.Solution.Pattern.ObjectOrientedPrograming.Inheritance.DerivedClasses;
@@ -515,8 +519,51 @@ namespace Diffrent.Practice.Solution.Pattern
                         #endregion
                         break;
                     case 41:
-                        int[] longestArray = { 1, 9, 3, 10, 4, 20, 2 };
-                        Console.WriteLine("Longest consecutive subsequence length is " + StringProgram.FindLongestSub(longestArray));
+                        #region Calculate arithmetic Addition operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + ArithmeticOperation<int>.Add(2, 5));
+                        #endregion
+                        break;
+                    case 42:
+                        #region Calculate arithmetic Sustract operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + ArithmeticOperation<int>.Subtract(2, 5));
+                        #endregion
+                        break;
+                    case 43:
+                        #region Calculate arithmetic Multiply operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + ArithmeticOperation<int>.Multiply(2, 5));
+                        #endregion
+                        break;
+                    case 44:
+                        #region Calculate arithmetic Division operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + ArithmeticOperation<int>.Divide(2, 5));
+                        #endregion
+                        break;
+                    case 45:
+                        #region Calculate Aggregate Addition operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + AggregateFunction<int>.Add(2, 5));
+                        #endregion
+                        break;
+                    case 46:
+                        #region Calculate Aggregate Sustract operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + AggregateFunction<int>.Subtract(2, 5));
+                        #endregion
+                        break;
+                    case 47:
+                        #region Calculate Aggregate Multiply operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + AggregateFunction<int>.Multiply(2, 5));
+                        #endregion
+                        break;
+                    case 48:
+                        #region Calculate Aggregate Division operation in Generic class
+                        Console.WriteLine("Arithmetic operation in Generic class " + AggregateFunction<int>.Divide(2, 5));
+                        #endregion
+                        break;
+                    case 49:
+                        #region Factory Design Pattern Code Changes Example
+                        NotificationFactory emailNotification = new EmailNotificationFactory();
+                        emailNotification.Notify("");
+                        Console.WriteLine("Arithmetic operation in Generic class " + AggregateFunction<int>.Divide(2, 5));
+                        #endregion
                         break;
                     default:
                         Console.WriteLine("Something went wrong");
